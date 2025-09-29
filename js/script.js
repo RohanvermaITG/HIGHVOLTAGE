@@ -13,24 +13,6 @@ let arrayofterms = [];
 let formData = {};
 let userInfo = document.getElementById("userInfo");
 
-function checkfirstLastName(value) {
-    const input = value;
-    if (input == "") return false;
-
-    for (let i = 0; i < input.length; i++) {
-        let charCode = input.charCodeAt(i);
-        if ((charCode < 97 || charCode > 122) && (charCode < 65 || charCode > 90)) {
-            return false;
-        }
-    }
-    if (input.length < 6) {
-        return false;
-    }
-    console.log("true checkfirstLastName");
-
-    return true;
-}
-
 function togalburger() {
     hamnavigation.innerHTML = "";
     hamnavigation.innerHTML = `${navigation.innerHTML} ${userCartsSearch.innerHTML}`;
@@ -46,14 +28,75 @@ function togalburger() {
     }
 }
 
+function checkfirstLastName(value) {
+    const input = value;
+    let FirstNameError = document.getElementById("FirstNameError")
+
+    if (input == "") {
+        FirstNameError.innerText = "please Enter valid Name"
+        return false;
+    }
+    for (let i = 0; i < input.length; i++) {
+        let charCode = input.charCodeAt(i);
+        if ((charCode < 97 || charCode > 122) && (charCode < 65 || charCode > 90)) {
+            FirstNameError.innerText = "please Enter valid Name"
+
+            return false;
+        }
+    }
+    if (input.length < 6) {
+        FirstNameError.innerText = "Name is to short please Enter a valid name"
+
+        return false;
+    }
+    console.log("true checkfirstLastName");
+    FirstNameError.innerText = ""
+
+    return true;
+}
+
+function checkLastName(value) {
+    const input = value;
+    let LastNameError = document.getElementById("LastNameError")
+
+    if (input == "") {
+        LastNameError.innerText = "please Enter valid Last Name"
+        return false;
+    }
+    for (let i = 0; i < input.length; i++) {
+        let charCode = input.charCodeAt(i);
+        if ((charCode < 97 || charCode > 122) && (charCode < 65 || charCode > 90)) {
+            LastNameError.innerText = "please Enter valid Last Name"
+
+            return false;
+        }
+    }
+    if (input.length < 6) {
+        LastNameError.innerText = "Name is to short please Enter a valid Last Name"
+
+        return false;
+    }
+    console.log("true checkfirstLastName");
+    LastNameError.innerText = ""
+
+    return true;
+}
+
+
 function phonenumber(num) {
+    let phoneError = document.getElementById("phoneError")
     if (num == "") {
+        phoneError.innerText = "Please Enter Your Number"
         return false;
     }
     if (num.length < 10) {
+        phoneError.innerText = "Please Enter Valid Number"
+
         return false;
     }
     if (num.length > 10) {
+        phoneError.innerText = "Please Enter Valid Number"
+
         return false;
     }
     let array = num.split("");
@@ -63,45 +106,68 @@ function phonenumber(num) {
         const element = array[i];
         if (!array[i] < "9" || !array[i] > "0") {
             console.log("num ");
+            phoneError.innerText = "Please Enter Valid Number"
+
+            return false
         }
     }
     console.log("true phonenumber");
+    phoneError.innerText = ""
 
     return true;
 }
 
 function emailvalidation(value) {
+    let EmailError = document.getElementById("EmailError")
     if (value == "") {
+        EmailError.innerText = "Please Enter Your Email Address"
         return false;
     }
     if (!value.includes("@")) {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     if (!value.includes(".")) {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     if (!value.includes("gmail.com")) {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     if (value[0] == "@") {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     if (typeof value[0] == "number") {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     if (value[value.length - 1] === "@" || value[value.length - 1] === ".") {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     const indexOfatsign = value.indexOf("@");
     const indexOfdot = value.indexOf(".");
     if (indexOfatsign > indexOfdot) {
+        EmailError.innerText = "Please Enter An Invalid Email Address"
+
         return false;
     }
     console.log("true emailvalidation");
+    EmailError.innerText = ""
+
     return true;
 }
 
 function getgender(gen) {
+    let genderError = document.getElementById("genderError")
     for (let i = 0; i < gen.length; i++) {
         if (gen[i].checked) {
             // console.log(gen[i].value);
@@ -111,10 +177,12 @@ function getgender(gen) {
             return true;
         }
     }
+    genderError.innerText = "Please Select any Gender"
     return false;
 }
 
 function gethoobies(checkboxes) {
+    let hobbiesError = document.getElementById("hobbiesError")
     console.log(checkboxes);
     checkboxes.forEach((element) => {
         // console.log("check boxes");
@@ -122,7 +190,7 @@ function gethoobies(checkboxes) {
             hobbiesArray.push(element.value);
             // console.log(element.value);
             console.log("true gethoobies");
-
+            hobbiesError.innerText = "please Select Your Hobbies"
             return false;
         }
     });
@@ -130,11 +198,15 @@ function gethoobies(checkboxes) {
 }
 
 function textareavalidation(value) {
+    let userMessageError = document.getElementById("userMessageError")
     if (value == "") {
+        userMessageError.innerText = "Please Enter Your Message"
         return false;
     }
     let userMessagearr = value.split(" ");
     if (userMessagearr.length < 15) {
+        userMessageError.innerText = "Message Is To Short"
+
         return false;
     }
     console.log("true textareavalidation");
@@ -143,12 +215,14 @@ function textareavalidation(value) {
 }
 
 function getterms(checkboxes) {
-    // console.log(checkboxes);
+    let termsError = document.getElementById("termsError")
+        // console.log(checkboxes);
     checkboxes.forEach((element) => {
         if (!element.checked) {
             arrayofterms.push(element.value);
             // console.log(element.value);
             console.log("true getterms");
+            termsError.innerText = "Please Select Any Box"
             return false;
         }
     });
@@ -168,9 +242,11 @@ userInfo.addEventListener("submit", (ev) => {
         "input[type='checkbox']"
     );
 
+
+
     if (
         checkfirstLastName(FirstName) &&
-        checkfirstLastName(LastName) &&
+        checkLastName(LastName) &&
         emailvalidation(email) &&
         phonenumber(phone) &&
         getgender(gen) &&

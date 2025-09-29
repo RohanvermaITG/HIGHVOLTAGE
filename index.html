@@ -214,22 +214,29 @@
                             <label>
                                 First Name*
                                 <input type="text" id="FirstName">
+                                <p id="FirstNameError"></p>
                             </label>
                             <label>
                                 Last Name*
                                 <input type="text" id="LastName">
+                                <p id="LastNameError"></p>
+
                             </label>
                         </div>
                         <div class="formlables">
                             <label>
                                 Email Address*
                                 <input type="text" id="email">
+                                <p id="EmailError"></p>
+
                             </label>
                         </div>
                         <div class="formlables">
 
                             <label>Phone Number*
                                 <input type="text" id="phone">
+                                <p id="phoneError"></p>
+
                             </label>
                             <label>
                                 DOB
@@ -254,6 +261,7 @@
                                 </label>
                             <input type="radio" name="gender" id="other" value="other">
 
+                            <p id="genderError"></p>
 
                             </label>
                         </div>
@@ -287,6 +295,7 @@
                                 <input type="checkbox" id="anyother" value="Other">
                                     <p>Other</p>
                                 </label>
+                            <p id="hobbiesError"></p>
 
 
                             </label>
@@ -295,6 +304,8 @@
                             <label>
                                 Message*
                                 <textarea name="Message" id="userMessage" placeholder="Enter text here"></textarea>
+                                <p id="userMessageError"></p>
+
                             </label>
 
                         </div>
@@ -316,6 +327,8 @@
                                     <p> Receive Promotional Offers</p>
 
                                 </label>
+                            <p id="termsError"></p>
+
                             </label>
                         </div>
                         <button class="shopbutton">SUBMIT</button>
