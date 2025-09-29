@@ -5,13 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Voltage</title>
+    <link rel="Icon" href="./assets/images/fevicon.png">
+
     <link rel="stylesheet" href="./css/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
 </head>
 
 <body>
@@ -30,8 +35,11 @@
                     <div class="brand-logo">
                         <a href="index.html"><img src="assets/images/brandlogo.svg" alt="logo"></a>
                     </div>
+                    <div class="ham-burger">
+                        <i class="fa-solid fa-bars" id="ham-burger" onclick="togalburger()"></i>
+                    </div>
                     <div class="navigation">
-                        <ul class="navigation-list">
+                        <ul class="navigation-list ">
                             <li>
                                 <a href="">NEW PRODUCTS</a>
                             </li>
@@ -46,8 +54,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="user-carts-search">
-                        <div class="user-carts-inner">
+                    <div class="user-carts-search ">
+                        <div class="user-carts-inner ">
                             <a href=""><img src="assets/images/searchIcon.svg" alt="search Icon"></a>
                             <a href=""><img src="assets/images/account 1.svg" alt="search Icon"></a>
                             <a href=""><img src="assets/images/Bag 1.svg" alt="search Icon"></a>
@@ -179,19 +187,19 @@
                     </div>
                     <div class="socisl-medis-posts">
                         <div class="posts">
-                            <a href="#"><img src="assets/images/build-poll.png" alt="build an poll" width="100%" height="100%"></a>
+                            <a href="#"><img src="./assets/images/build-poll.png" alt="build an poll" width="100%" height="100%"></a>
                         </div>
                         <div class="posts">
-                            <a href="#"><img src="assets/images/man-in-black-ofit.png" alt="build an poll" width="100%" height="100%"></a>
+                            <a href="#"><img src="./assets/images/man-in-black-ofit.png" alt="build an poll" width="100%" height="100%"></a>
                         </div>
                         <div class="posts">
-                            <a href="#"><img src="assets/images/image-qwith-text.png" alt="build an poll" width="100%" height="100%"></a>
+                            <a href="#"><img src="./assets/images/image-qwith-text.png" alt="build an poll" width="100%" height="100%"></a>
                         </div>
                         <div class="posts">
-                            <a href="#"><img src="assets/images/man-in-desserte.png" alt="build an poll" width="100%" height="100%"></a>
+                            <a href="#"><img src="./assets/images/man-in-desserte.png" alt="build an poll" width="100%" height="100%"></a>
                         </div>
                         <div class="posts">
-                            <a href="#"><img src="assets/images/man-in-cabin.png" alt="build an poll" width="100%" height="100%"></a>
+                            <a href="#"><img src="./assets/images/man-in-cabin.png" alt="build an poll" width="100%" height="100%"></a>
                         </div>
                     </div>
                 </div>
@@ -253,31 +261,32 @@
                             Hobbies*
                             <label class="hobbies">
                                 <label for="playing">
+                                    <input type="checkbox" id="playing" value="playing cricket">
                                     <p>playing cricket</p>
+
                                 </label>
-                            <input type="checkbox" id="playing" value="playing cricket">
 
                             <label for="Watching">
+                                <input type="checkbox" id="Watching" value="Watching-TV">
                                     <p> Watching TV</p>
 
                                 </label>
-                            <input type="checkbox" id="Watching" value="Watching-TV">
 
                             <label for="Reading">
+                                <input type="checkbox" id="Reading" value="Reading-books">
                                     <p> Reading Books</p>
 
                                 </label>
 
-                            <input type="checkbox" id="Reading" value="Reading-books">
                             <label for="Riding">
+                                    <input type="checkbox" id="Riding" value=" Riding Bike">
                                     <p> Riding Bike</p>
                                 </label>
-                            <input type="checkbox" id="Riding" value=" Riding Bike">
 
                             <label for="anyother">
+                                <input type="checkbox" id="anyother" value="Other">
                                     <p>Other</p>
                                 </label>
-                            <input type="checkbox" id="anyother" value="Other">
 
 
                             </label>
@@ -302,7 +311,7 @@
                                     <p>Agree to Terms & Conditions</p>
                                 </label>
                             <label for="Promotional">
-                            <input type="checkbox" id="Promotional" value="Receive Promotional Offers">
+                                    <input type="checkbox" id="Promotional" value="Receive Promotional Offers">
 
                                     <p> Receive Promotional Offers</p>
 
@@ -319,18 +328,19 @@
                 <div class="footer-inner wrapper">
                     <div class="brand-info">
                         <div class="brand-logo">
-                            <a href="./index.html"> <img src="/assets/images/brandlogo.svg" alt="brand logo"></a>
+                            <a href="./index.html"> <img src="./assets/images/brandlogo.svg" alt="brand logo"></a>
                         </div>
                         <div class="brand-info-blog">
                             <p>Second generation IBEW. For over five years, I've built an Instagram account highlighting the High Voltage Industry across the U.S. and the world, showing all aspects this industry has to offer.</p>
                         </div>
                         <div class="social-media-accounts">
-                            <a href="#"><img src="/assets/images/facebook.svg" alt=""></a>
-                            <a href="#"><img src="/assets/images/instagram.svg" alt=""></a>
+                            <a href="#"><img src="./assets/images/facebook.svg" alt=""></a>
+                            <a href="#"><img src="./assets/images/instagram.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="quick-links">
                         <ul class="footer-nav-list">
+                            <p class="footer-list-title">QUICK LINKS</p>
                             <li>
                                 <a href="#">NEW PRODUCTS</a>
                             </li>
@@ -347,6 +357,8 @@
                     </div>
                     <div class="customer-support">
                         <ul class="footer-nav-list">
+                            <p class="footer-list-title">SUPPORT</p>
+
                             <li>
                                 <a href="#">Contact us</a>
                             </li>
@@ -365,6 +377,8 @@
                         </ul>
                     </div>
                     <div class="newpartner">
+                        <p class="footer-list-title">NEWSlETTER</p>
+
                         <div class="basic-info">
                             <p>Sign up for our newsletter to stay informed on product launches, giveaways, sales and more.
                             </p>
@@ -381,19 +395,280 @@
                         <p>© 2024 High Voltage Industries.</p>
                     </div>
                     <div class="payment-method ">
-                        <a href="#"><img src="/assets/images/Visa_2_.png" alt="Visa_2_"></a>
-                        <a href="#"><img src="/assets/images/Master_Card_2_.png" alt="Master_Card_2_"></a>
-                        <a href="#"><img src="/assets/images/Amex_2_.png" alt="Amex_2_"></a>
-                        <a href="#"><img src="/assets/images/PayPal_2_.png" alt="PayPal_2_"></a>
-                        <a href="#"><img src="/assets/images/Diners_Club_2_.png" alt="Diners_Club_2_"></a>
+                        <a href="#"><img src="./assets/images/Visa_2_.png" alt="Visa_2_"></a>
+                        <a href="#"><img src="./assets/images/Master_Card_2_.png" alt="Master_Card_2_"></a>
+                        <a href="#"><img src="./assets/images/Amex_2_.png" alt="Amex_2_"></a>
+                        <a href="#"><img src="./assets/images/PayPal_2_.png" alt="PayPal_2_"></a>
+                        <a href="#"><img src="./assets/images/Diners_Club_2_.png" alt="Diners_Club_2_"></a>
                     </div>
                 </div>
             </div>
         </section>
         <script src="./js/script.js"></script>
     </div>
-
-
+    <!-- 
+    {* {
+        margin: 0px;
+        padding: 0px;
+        text-decoration: none;
+        font-family: var(--fontfamily);
+    }
+    
+     :root {
+        --fontfamily: Lexend Deca;
+        --padding: 40px 0px;
+    }
+    
+    .wrapper {
+        max-width: 1440px;
+        margin: auto;
+    }
+    
+    .padding {
+        padding: var(--padding);
+    }
+    /* announsment bar */
+    
+    .announsment-inner {
+        text-align: center;
+        background-color: #FFFFFF;
+        font-family: var(--fontfamily);
+        height: 40px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    /*header */
+    
+    .herder {
+        background-color: black;
+        padding: 18px 0px;
+        align-items: center;
+    }
+    
+    .header-inner {
+        display: flex;
+        /* grid-template-columns: repeat(3, 1fr); */
+        padding: 0px 10px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-family: var(--fontfamily);
+        justify-content: space-around;
+    }
+    
+    .navigation-list {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        /* color: white; */
+        list-style: none;
+    }
+    
+    .navigation-list a {
+        color: white;
+    }
+    
+    .navigation-list a:hover {
+        color: gray;
+        /* font-size: larger; */
+        transition: 0.3s;
+    }
+    
+    .user-carts-inner {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .baner-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+    
+    .baner-inner-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        font-family: Inter;
+        line-height: 73.5px;
+        max-width: 823px;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    
+    .baner-inner-text p {
+        font-weight: 700;
+        color: #FFB109;
+    }
+    
+    .baner-inner-text h2 {
+        font-size: 62px;
+        font-weight: 700;
+        color: black;
+    }
+    
+    .shopbutton {
+        border-radius: 32px;
+        width: 136px;
+        height: 52px;
+        font-weight: 700px;
+        color: white;
+        background-color: black;
+        border: none;
+    }
+    
+    img.baner-image {
+        height: auto;
+        aspect-ratio: 9/6;
+    }
+    
+    input[type="date"] {
+        /* border: 1px solid #ccc; */
+        padding: 2px;
+        border-radius: 4px;
+    }
+    
+     :root {
+        --fontfamily: Lexend Deca;
+        --padding: 40px 0;
+    }
+    /* @media (max-width: 768px) {} */
+    /* Large desktops (up to 1440px) */
+    
+    @media (max-width: 1440px) {
+        .wrapper {
+            padding: 0 20px;
+        }
+        .header-inner {
+            display: flex;
+            padding: 0px 10px;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--fontfamily);
+            justify-content: space-around;
+        }
+        .product-grid-inner {
+            width: 95%;
+        }
+    }
+    /* Tablets (up to 1024px) */
+    
+    @media (max-width: 1024px) {
+        .header-inner {
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+        .navigation-list {
+            gap: 25px;
+        }
+        .product-grid-inner {
+            grid-template-columns: repeat(3, 1fr);
+            width: 90%;
+        }
+        .baner-inner-text h2 {
+            font-size: 48px;
+            line-height: 56px;
+        }
+        .baner-inner-text p {
+            font-size: 20px;
+        }
+        .shopbutton {
+            width: 130px;
+            height: 48px;
+        }
+        .footer-inner.wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            gap: 18px;
+            line-height: 24px;
+            font-size: 15px;
+            color: white;
+        }
+    }
+    /* Tablets & small devices (up to 768px) */
+    
+    @media (max-width: 768px) {
+        .header-inner {
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10px;
+        }
+        .navigation-list {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .product-grid-inner {
+            grid-template-columns: repeat(2, 1fr);
+            width: 88%;
+        }
+        .product-cart {
+            width: 100%;
+        }
+        .footer-inner.wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 20px;
+        }
+        .baner-inner-text h2 {
+            font-size: 40px;
+        }
+        .baner-inner-text p {
+            font-size: 18px;
+        }
+    }
+    /* Mobile devices (up to 480px) */
+    
+    @media (max-width: 480px) {
+        .header-inner {
+            flex-direction: column;
+            align-items: center;
+        }
+        .navigation-list {
+            gap: 15px;
+            text-align: center;
+        }
+        .product-grid-inner {
+            grid-template-columns: 1fr;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .product-cart {
+            width: 100%;
+        }
+        .baner-inner-text h2 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+        .baner-inner-text p {
+            font-size: 16px;
+        }
+        .shopbutton {
+            width: 120px;
+            height: 45px;
+        }
+        #email {
+            width: 100%;
+        }
+        form#userInfo {
+            width: 100%;
+            margin: 0;
+            padding: 0 10px;
+        }
+        .footer-inner.wrapper {
+            grid-template-columns: 1fr;
+            padding: 20px;
+            text-align: center;
+        }
+        .socisl-medis-posts {
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
+    } -->
 
 </body>
 

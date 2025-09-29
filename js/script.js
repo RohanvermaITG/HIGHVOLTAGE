@@ -1,10 +1,16 @@
 let dob = document.getElementById("dob");
 let hobbies = document.getElementsByClassName("hobbies")[0];
+let navigation = document.getElementsByClassName("navigation-list")[0];
+let userCartsSearch = document.getElementsByClassName("user-carts-search")[0];
+let headerInner = document.getElementsByClassName("header-inner")[0];
+let hamnavigation = document.getElementsByClassName("navigation")[0];
+
 let termscondition = document.getElementById("termscondition");
+let hamBurger = document.getElementById("ham-burger");
 let usergender;
 let hobbiesArray = [];
 let arrayofterms = [];
-let formData = {}
+let formData = {};
 let userInfo = document.getElementById("userInfo");
 
 function checkfirstLastName(value) {
@@ -25,6 +31,21 @@ function checkfirstLastName(value) {
     return true;
 }
 
+function togalburger() {
+    hamnavigation.innerHTML = "";
+    hamnavigation.innerHTML = `${navigation.innerHTML} ${userCartsSearch.innerHTML}`;
+    hamnavigation.classList.remove("deactive")
+
+
+    if (hamnavigation.style.display == "none") {
+        hamnavigation.style.display = "flex";
+    } else if (hamnavigation.style.display == "flex") {
+        hamnavigation.style.display = "none";
+
+        // hamnavigation.classList.add("deactive")
+    }
+}
+
 function phonenumber(num) {
     if (num == "") {
         return false;
@@ -35,16 +56,14 @@ function phonenumber(num) {
     if (num.length > 10) {
         return false;
     }
-    let array = num.split("")
-        // console.log(array);
+    let array = num.split("");
+    // console.log(array);
 
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        if (!array[i] < '9' || !array[i] > '0') {
-            console.log("num ")
+        if (!array[i] < "9" || !array[i] > "0") {
+            console.log("num ");
         }
-
-
     }
     console.log("true phonenumber");
 
@@ -82,7 +101,6 @@ function emailvalidation(value) {
     return true;
 }
 
-
 function getgender(gen) {
     for (let i = 0; i < gen.length; i++) {
         if (gen[i].checked) {
@@ -117,14 +135,12 @@ function textareavalidation(value) {
     }
     let userMessagearr = value.split(" ");
     if (userMessagearr.length < 15) {
-        return false
+        return false;
     }
     console.log("true textareavalidation");
 
     return true;
 }
-
-
 
 function getterms(checkboxes) {
     // console.log(checkboxes);
@@ -148,18 +164,20 @@ userInfo.addEventListener("submit", (ev) => {
     let gen = document.getElementsByName("gender");
     let userMessage = document.getElementById("userMessage").value;
     let checkboxes = hobbies.querySelectorAll("input[type='checkbox']");
-    let termsconditionbox = termscondition.querySelectorAll("input[type='checkbox']");
+    let termsconditionbox = termscondition.querySelectorAll(
+        "input[type='checkbox']"
+    );
 
-    if (checkfirstLastName(FirstName) &&
+    if (
+        checkfirstLastName(FirstName) &&
         checkfirstLastName(LastName) &&
         emailvalidation(email) &&
         phonenumber(phone) &&
         getgender(gen) &&
         gethoobies(checkboxes) &&
         textareavalidation(userMessage) &&
-        getterms(termsconditionbox)) {
-
-
+        getterms(termsconditionbox)
+    ) {
         formData["First Name"] = FirstName;
         formData["Last Name"] = LastName;
         formData["Email"] = email;
@@ -170,8 +188,7 @@ userInfo.addEventListener("submit", (ev) => {
         formData["terms_conditon"] = arrayofterms;
         console.log(formData);
         let stringfyuserData = JSON.stringify(formData);
-        localStorage.setItem(email, stringfyuserData)
+        localStorage.setItem(email, stringfyuserData);
     }
-
 });
 console.log(formData, "oput od ");
