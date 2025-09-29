@@ -1,0 +1,364 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: var(--fontfamily);
+}
+
+:root {
+    --fontfamily: Lexend Deca;
+    --padding: 40px 0px;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: auto;
+}
+
+.padding {
+    padding: var(--padding);
+}
+
+
+/* announsment bar */
+
+.announsment-inner {
+    text-align: center;
+    background-color: #FFFFFF;
+    font-family: var(--fontfamily);
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*header */
+
+.herder {
+    background-color: black;
+    padding: 18px 0px;
+    align-items: center;
+}
+
+.header-inner {
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    padding: 0px 10px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-family: var(--fontfamily);
+    justify-content: space-around;
+}
+
+.navigation-list {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    /* color: white; */
+    list-style: none;
+}
+
+.navigation-list a {
+    color: white;
+}
+
+.navigation-list a:hover {
+    color: gray;
+    /* font-size: larger; */
+    transition: 0.3s;
+}
+
+.user-carts-inner {
+    display: flex;
+    gap: 20px;
+}
+
+.baner-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.baner-inner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: Inter;
+    line-height: 73.5px;
+    max-width: 823px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.baner-inner-text p {
+    font-weight: 700;
+    color: #FFB109;
+}
+
+.baner-inner-text h2 {
+    font-size: 62px;
+    font-weight: 700;
+    color: black;
+}
+
+.shopbutton {
+    border-radius: 32px;
+    width: 136px;
+    height: 52px;
+    font-weight: 700px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+h3 {
+    text-align: center;
+    line-height: 30px;
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.product-category-title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-category-title a {
+    text-align: center;
+    /* line-height: 30px; */
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #FFB109;
+}
+
+#email {
+    width: 700px;
+}
+
+.products-collection-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+}
+
+.product-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 88%;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-cart {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    padding: 12px;
+    align-items: flex-start;
+    background-color: white;
+    gap: 10px;
+}
+
+.social-media-inner.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    /* justify-self: center; */
+    align-items: center;
+}
+
+.socisl-medis-posts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 88%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+form#userInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: auto;
+    gap: 26px;
+    /* background: gray; */
+}
+
+.formlables {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+label.gender {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.formlables label {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 45%;
+    font-size: 16px;
+}
+
+.hobbies label {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 16px;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    gap: 8px;
+    /* align-items: center; */
+}
+
+.hobbies {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+label#termscondition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.privicycheckbox {
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+}
+
+.privicycheckbox label {
+    align-items: center;
+}
+
+#userInfo p {
+    color: rgb(87, 84, 84);
+    font-size: 14px;
+}
+
+input {
+    outline: none;
+    border: none;
+    background: #F7F7F7;
+    height: 43px;
+    border-radius: 12px;
+}
+
+textarea#userMessage {
+    text-align: start;
+    padding-left: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 314px;
+}
+
+.footer {
+    background: black;
+    font-weight: normal;
+}
+
+.footer-inner.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 21px;
+    line-height: 24px;
+    font-size: 15px;
+    color: white;
+}
+
+ul.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: white;
+    gap: 6px;
+}
+
+ul.footer-nav-list a {
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.brand-info,
+.newpartner {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    font-weight: 400;
+}
+
+.partner-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.payments-modes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    font-weight: 400;
+}
+
+.partner-info input {
+    border-radius: 32px;
+    width: 427px;
+}
+
+.partner-info button {
+    border-radius: 32px;
+    width: 152px;
+    height: 51px;
+    background-color: #FFB109;
+    color: black;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.partner-info input::placeholder {
+    padding-left: 10px;
+    color: gray;
+}
+
+img.baner-image {
+    height: auto;
+    aspect-ratio: 9/6;
+}
+
+input[type="date"] {
+    /* border: 1px solid #ccc; */
+    padding: 2px;
+    border-radius: 4px;
+}
