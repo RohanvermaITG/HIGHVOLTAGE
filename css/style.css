@@ -389,18 +389,11 @@
     .error {
         color: red;
     }
-    /* .navigation a {
-        color: white;
-        display: flex;
-        gap: 5px;
-    }
     
-    .navigation {
-        color: white;
-        display: flex;
-        gap: 5px;
-        list-style: none;
-    } */
+    #submition {
+        font-size: 20px;
+        color: green;
+    }
     /* Large screens - no change needed, but can tweak padding */
     
     @media (max-width: 1440px) {

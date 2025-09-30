@@ -254,6 +254,8 @@ userInfo.addEventListener("submit", (ev) => {
     let userMessage = document.getElementById("userMessage").value;
     let checkboxes = hobbies.querySelectorAll("input[type='checkbox']");
     let termsconditionbox = termscondition.querySelectorAll("input[type='checkbox']");
+    let submition = document.getElementById("submition");
+
     // check all the function is true or not
     if (
         checkFirstName(FirstName) &&
@@ -277,7 +279,7 @@ userInfo.addEventListener("submit", (ev) => {
             "terms_condition": arrayofterms,
             "Text": userMessage,
         };
-
+        submition.innerText = "Your Form Is Submited And Data is Stored In Local Storage"
         console.log(formData);
         // convert data in stringify
         let stringifiedUserData = JSON.stringify(formData);
