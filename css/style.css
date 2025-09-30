@@ -277,7 +277,7 @@
     }
     
     #userInfo p {
-        color: rgb(87, 84, 84);
+        /* color: rgb(87, 84, 84); */
         font-size: 14px;
     }
     
@@ -385,6 +385,22 @@
         top: 37%;
         right: 0%;
     }
+    
+    .error {
+        color: red;
+    }
+    /* .navigation a {
+        color: white;
+        display: flex;
+        gap: 5px;
+    }
+    
+    .navigation {
+        color: white;
+        display: flex;
+        gap: 5px;
+        list-style: none;
+    } */
     /* Large screens - no change needed, but can tweak padding */
     
     @media (max-width: 1440px) {

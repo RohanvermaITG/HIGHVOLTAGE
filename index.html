@@ -38,8 +38,8 @@
                     <div class="ham-burger">
                         <i class="fa-solid fa-bars" id="ham-burger" onclick="togalburger()"></i>
                     </div>
-                    <div class="navigation">
-                        <ul class="navigation-list ">
+                    <div class="navigation deactive">
+                        <ul class="navigation-list deactive">
                             <li>
                                 <a href="">NEW PRODUCTS</a>
                             </li>
@@ -54,8 +54,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="user-carts-search">
-                        <div class="user-carts-inner">
+                    <div class="user-carts-search deactive">
+                        <div class="user-carts-inner ">
                             <a href=""><img src="assets/images/searchIcon.svg" alt="search Icon"></a>
                             <a href=""><img src="assets/images/account 1.svg" alt="search Icon"></a>
                             <a href=""><img src="assets/images/Bag 1.svg" alt="search Icon"></a>
@@ -214,12 +214,12 @@
                             <label>
                                 First Name*
                                 <input type="text" id="FirstName">
-                                <p id="FirstNameError"></p>
+                                <p id="FirstNameError" class="error"></p>
                             </label>
                             <label>
                                 Last Name*
                                 <input type="text" id="LastName">
-                                <p id="LastNameError"></p>
+                                <p id="LastNameError" class="error"></p>
 
                             </label>
                         </div>
@@ -235,13 +235,14 @@
 
                             <label>Phone Number*
                                 <input type="text" id="phone">
-                                <p id="phoneError"></p>
+                                <p id="phoneError" class="error"></p>
 
                             </label>
                             <label>
                                 DOB
                                 <input type="date" placeholder="Select date" id="dob">
                             </label>
+                            <p id="DobError" class="error"></p>
                         </div>
                         <div>
                             Gender*
@@ -261,9 +262,10 @@
                                 </label>
                             <input type="radio" name="gender" id="other" value="other">
 
-                            <p id="genderError"></p>
 
                             </label>
+                            <p id="genderError" class="error"></p>
+
                         </div>
                         <div>
                             Hobbies*
@@ -295,16 +297,15 @@
                                 <input type="checkbox" id="anyother" value="Other">
                                     <p>Other</p>
                                 </label>
-                            <p id="hobbiesError"></p>
-
-
                             </label>
+                            <p id="hobbiesError" class="error"></p>
+
                         </div>
                         <div class="formlables">
                             <label>
                                 Message*
                                 <textarea name="Message" id="userMessage" placeholder="Enter text here"></textarea>
-                                <p id="userMessageError"></p>
+                                <p id="userMessageError" class="error"></p>
 
                             </label>
 
@@ -327,7 +328,7 @@
                                     <p> Receive Promotional Offers</p>
 
                                 </label>
-                            <p id="termsError"></p>
+                            <p id="termsError" class="error"></p>
 
                             </label>
                         </div>

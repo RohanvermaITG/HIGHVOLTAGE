@@ -1,5 +1,6 @@
 let dob = document.getElementById("dob");
 let hobbies = document.getElementsByClassName("hobbies")[0];
+
 let navigation = document.getElementsByClassName("navigation-list")[0];
 let userCartsSearch = document.getElementsByClassName("user-carts-search")[0];
 let headerInner = document.getElementsByClassName("header-inner")[0];
@@ -7,28 +8,27 @@ let hamnavigation = document.getElementsByClassName("navigation")[0];
 
 let termscondition = document.getElementById("termscondition");
 let hamBurger = document.getElementById("ham-burger");
+// user Gender
 let usergender;
+// user hobbies
 let hobbiesArray = [];
+// term of user
 let arrayofterms = [];
-let formData = {};
+
 let userInfo = document.getElementById("userInfo");
-
+// togal hanburger
 function togalburger() {
-    hamnavigation.innerHTML = "";
     hamnavigation.innerHTML = `${navigation.innerHTML} ${userCartsSearch.innerHTML}`;
-    hamnavigation.classList.remove("deactive")
 
-
-    if (hamnavigation.style.display == "none") {
+    if (hamnavigation.style.display === "none" || hamnavigation.style.display === "") {
         hamnavigation.style.display = "flex";
-    } else if (hamnavigation.style.display == "flex") {
+    } else {
         hamnavigation.style.display = "none";
-
-        // hamnavigation.classList.add("deactive")
     }
 }
 
-function checkfirstLastName(value) {
+// first name vadidation
+function checkFirstName(value) {
     const input = value;
     let FirstNameError = document.getElementById("FirstNameError")
 
@@ -49,11 +49,11 @@ function checkfirstLastName(value) {
 
         return false;
     }
-    console.log("true checkfirstLastName");
     FirstNameError.innerText = ""
 
     return true;
 }
+// last name vadidation
 
 function checkLastName(value) {
     const input = value;
@@ -76,46 +76,65 @@ function checkLastName(value) {
 
         return false;
     }
-    console.log("true checkfirstLastName");
     LastNameError.innerText = ""
 
     return true;
 }
 
 
+// Mobile number vadidation
+
 function phonenumber(num) {
-    let phoneError = document.getElementById("phoneError")
+    let phoneError = document.getElementById("phoneError");
+
     if (num == "") {
-        phoneError.innerText = "Please Enter Your Number"
-        return false;
+        phoneError.innerText = "please Enter Your Number"
+        return false
     }
     if (num.length < 10) {
-        phoneError.innerText = "Please Enter Valid Number"
-
+        phoneError.innerText = "please Enter Your Number"
+    }
+    if (num.length !== 10 || isNaN(num)) {
+        phoneError.innerText = "Please Enter a Valid 10-digit Number";
         return false;
     }
-    if (num.length > 10) {
-        phoneError.innerText = "Please Enter Valid Number"
-
-        return false;
-    }
-    let array = num.split("");
-    // console.log(array);
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        if (!array[i] < "9" || !array[i] > "0") {
-            console.log("num ");
-            phoneError.innerText = "Please Enter Valid Number"
-
-            return false
-        }
-    }
-    console.log("true phonenumber");
-    phoneError.innerText = ""
-
+    phoneError.innerText = "";
     return true;
 }
+// user Hobbies vadidation
+
+function getHobbies(checkboxes) {
+    let hobbiesError = document.getElementById("hobbiesError");
+    hobbiesArray = [];
+    checkboxes.forEach((element) => {
+        if (element.checked) {
+            hobbiesArray.push(element.value);
+        }
+    });
+    if (hobbiesArray.length === 0) {
+        hobbiesError.innerText = "Please Select Your Hobbies";
+        return false;
+    }
+    hobbiesError.innerText = "";
+    return true;
+}
+// terms vadidation
+function getTerms(checkboxes) {
+    let termsError = document.getElementById("termsError");
+    arrayofterms = [];
+    checkboxes.forEach((element) => {
+        if (element.checked) {
+            arrayofterms.push(element.value);
+        }
+    });
+    if (arrayofterms.length === 0) {
+        termsError.innerText = "Please Accept Terms & Conditions";
+        return false;
+    }
+    termsError.innerText = "";
+    return true;
+}
+// Email vadidation
 
 function emailvalidation(value) {
     let EmailError = document.getElementById("EmailError")
@@ -160,19 +179,17 @@ function emailvalidation(value) {
 
         return false;
     }
-    console.log("true emailvalidation");
     EmailError.innerText = ""
 
     return true;
 }
+// gender vadidation
 
 function getgender(gen) {
     let genderError = document.getElementById("genderError")
     for (let i = 0; i < gen.length; i++) {
         if (gen[i].checked) {
-            // console.log(gen[i].value);
             usergender = gen[i].value;
-            console.log("true getgender");
 
             return true;
         }
@@ -180,22 +197,7 @@ function getgender(gen) {
     genderError.innerText = "Please Select any Gender"
     return false;
 }
-
-function gethoobies(checkboxes) {
-    let hobbiesError = document.getElementById("hobbiesError")
-    console.log(checkboxes);
-    checkboxes.forEach((element) => {
-        // console.log("check boxes");
-        if (!element.checked) {
-            hobbiesArray.push(element.value);
-            // console.log(element.value);
-            console.log("true gethoobies");
-            hobbiesError.innerText = "please Select Your Hobbies"
-            return false;
-        }
-    });
-    return true;
-}
+// message by user  vadidation
 
 function textareavalidation(value) {
     let userMessageError = document.getElementById("userMessageError")
@@ -209,62 +211,83 @@ function textareavalidation(value) {
 
         return false;
     }
-    console.log("true textareavalidation");
 
     return true;
 }
+// date of birth vadidation
 
-function getterms(checkboxes) {
-    let termsError = document.getElementById("termsError")
-        // console.log(checkboxes);
-    checkboxes.forEach((element) => {
-        if (!element.checked) {
-            arrayofterms.push(element.value);
-            // console.log(element.value);
-            console.log("true getterms");
-            termsError.innerText = "Please Select Any Box"
-            return false;
-        }
-    });
-    return true;
+function validateDOB(dob) {
+    const error = document.getElementById("DobError");
+
+    if (!dob) {
+        error.textContent = "Please select your date of birth.";
+        return false;
+    }
+
+    const dobDate = new Date(dob);
+    const today = new Date();
+
+    if (dobDate > today) {
+        error.textContent = "DOB cannot be in the future.";
+        return false;
+    }
+
+    const age = today.getFullYear() - dobDate.getFullYear();
+    if (age < 18) {
+        error.textContent = "You must be at least 18 years old.";
+        return false;
+    }
+
+    error.textContent = "";
+    return true
 }
-
+// form 
 userInfo.addEventListener("submit", (ev) => {
     ev.preventDefault();
-    let LastName = document.getElementById("LastName").value; // done
-    let FirstName = document.getElementById("FirstName").value; // done
+
+    let LastName = document.getElementById("LastName").value;
+    let FirstName = document.getElementById("FirstName").value;
     let email = document.getElementById("email").value;
     let phone = document.getElementById("phone").value;
+    let dob = document.getElementById("dob").value;
     let gen = document.getElementsByName("gender");
     let userMessage = document.getElementById("userMessage").value;
     let checkboxes = hobbies.querySelectorAll("input[type='checkbox']");
-    let termsconditionbox = termscondition.querySelectorAll(
-        "input[type='checkbox']"
-    );
-
-
-
+    let termsconditionbox = termscondition.querySelectorAll("input[type='checkbox']");
+    // check all the function is true or not
     if (
-        checkfirstLastName(FirstName) &&
+        checkFirstName(FirstName) &&
         checkLastName(LastName) &&
         emailvalidation(email) &&
         phonenumber(phone) &&
+        validateDOB(dob) &&
         getgender(gen) &&
-        gethoobies(checkboxes) &&
+        getHobbies(checkboxes) &&
         textareavalidation(userMessage) &&
-        getterms(termsconditionbox)
+        getTerms(termsconditionbox)
     ) {
-        formData["First Name"] = FirstName;
-        formData["Last Name"] = LastName;
-        formData["Email"] = email;
-        formData["Phone"] = phone;
-        formData["Gender"] = "gemder";
-        formData["Hobbies"] = hobbiesArray;
-        formData["Text"] = userMessage;
-        formData["terms_conditon"] = arrayofterms;
+        // object to store form data
+        let formData = {
+            "First Name": FirstName,
+            "Last Name": LastName,
+            "Email": email,
+            "Phone": phone,
+            "Gender": usergender,
+            "Hobbies": hobbiesArray,
+            "terms_condition": arrayofterms,
+            "Text": userMessage,
+        };
+
         console.log(formData);
-        let stringfyuserData = JSON.stringify(formData);
-        localStorage.setItem(email, stringfyuserData);
+        // convert data in stringify
+        let stringifiedUserData = JSON.stringify(formData);
+        if (!localStorage.getItem(email)) {
+            // mstore in local Storage
+            localStorage.setItem(email, stringifiedUserData);
+            console.log(JSON.parse(localStorage.getItem(email)))
+        } else {
+            alert("This email is already registered.");
+        }
     }
+    // localStorage.setItem(email, stringfyuserData);
 });
-console.log(formData, "oput od ");
